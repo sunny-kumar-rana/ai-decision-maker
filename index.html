@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Smart Decision Engine</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Smart Decision Engine</h1>
+
+    <div class="container">
+      <div class="card">
+        <textarea
+          id="nlInput"
+          placeholder="Should I eat sandwich, biryani, or omelet?"
+        ></textarea>
+        <button onclick="extractOptions()">Extract Options</button>
+      </div>
+
+      <div class="card">
+        <button id="addBtn">+ Add Option</button>
+        <div id="options"></div>
+      </div>
+
+      <div class="card">
+        <h3>Factors</h3>
+        Cost <input type="range" id="cost" min="1" max="10" value="5" /> Time
+        <input type="range" id="time" min="1" max="10" value="5" /> Effort
+        <input type="range" id="effort" min="1" max="10" value="5" /> Fun
+        <input type="range" id="fun" min="1" max="10" value="5" /> Risk
+        <input type="range" id="risk" min="1" max="10" value="5" />
+      </div>
+
+      <div class="card">
+        <input id="maxCost" type="number" placeholder="Max Cost" />
+        <input id="maxTime" type="number" placeholder="Max Time" />
+      </div>
+
+      <div class="card">
+        <textarea id="context" placeholder="Context"></textarea>
+
+        <select id="mode">
+          <option>Quick</option>
+          <option>Deep</option>
+          <option>Random</option>
+        </select>
+
+        <button onclick="decide()">Decide</button>
+      </div>
+
+      <div id="loader" class="loader hidden">Analyzing...</div>
+      <div id="result"></div>
+
+      <div class="card">
+        <button onclick="simulate('money')">More Money</button>
+        <button onclick="simulate('time')">Less Time</button>
+      </div>
+
+      <div class="card">
+        <h3>History</h3>
+        <div id="history"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
